@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Vite App</title>
+</head>
+<body>
+
+<button class="open-main-modal">Open Main Modal</button>
+
+<div id="prev-modal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-card">
+        <div class="modal-body">
+            <div class="modal-header">Prev Modal</div>
+            <div class="modal-content">Modal in body before the main modal</div>
+            <div class="modal-footer">
+                <button class="modal-close">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="main-modal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-card">
+        <div class="modal-body">
+            <div class="modal-header">Main Modal</div>
+            <div class="modal-content">
+                <div style="max-width: 500px; max-height: 200px">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi earum illum nostrum nulla perferendis soluta, voluptatem voluptates? Architecto ea earum explicabo harum non, quas quisquam, ratione similique sunt, suscipit veniam.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi earum illum nostrum nulla perferendis soluta, voluptatem voluptates? Architecto ea earum explicabo harum non, quas quisquam, ratione similique sunt, suscipit veniam.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi earum illum nostrum nulla perferendis soluta, voluptatem voluptates? Architecto ea earum explicabo harum non, quas quisquam, ratione similique sunt, suscipit veniam.
+                    </p>
+                </div>
+                <div id="inner-modal" class="modal">
+                    <div class="modal-overlay"></div>
+                    <div class="modal-card">
+                        <div class="modal-body">
+                            <div class="modal-content">Inner Modal</div>
+                            <div class="modal-footer">
+                                <button class="modal-close">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="modal-close">Close</button>
+                <div>
+                    <button class="open-inner-modal">Open Overlay Modal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="next-modal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-card">
+        <div class="modal-body">
+            <div class="modal-header">Next Modal</div>
+            <div class="modal-content">Modal in body after the main modal</div>
+            <div class="modal-footer">
+                <button class="modal-close">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="/src/main.ts"></script>
+<script type="module" src="/utils/js/actualViewHeight.js"></script>
+<script type="module" src="/utils/css/testing-body-scroll.css"></script>
+<script type="module" src="/utils/css/default-modal-styles.css"></script>
+
+<script>
+    const interval = setInterval(() => {
+        if (!Modal) return
+        if(Modal) clearInterval(interval)
+        const mainModal = new Modal('main-modal', true)
+        const innerModal = new Modal('inner-modal', true)
+        const prevModal = new Modal('prev-modal', true)
+        const nextModal = new Modal('next-modal', true)
+        document.querySelector('.open-main-modal').addEventListener('click', () => mainModal.isOpen = true)
+        document.querySelector('.open-inner-modal').addEventListener('click', () => innerModal.isOpen = true)
+    }, 100)
+</script>
+
+</body>
+</html>
