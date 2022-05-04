@@ -17,6 +17,12 @@ You should only use these categories when writing your updates:
 - 🤖 TEST: Mock User Login/Logout
 - ‼️ BREAKING: Change authentication protocol
 
+## [0.2.0]
+
+- 📦 NEW: Added config and callbacks to Modal
+- 📦 NEW: Added body lock when modal is opened
+- 📦 NEW: Added custom events on modal open/close
+
 ## [0.1.1]
 
 - 👌 IMPROVE: Externalize CSS
