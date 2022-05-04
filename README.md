@@ -10,7 +10,7 @@ Vanilla JS modal, that simply adds a `.open` class to show the modal.
 
 Download source files
 - css from _assets/css/default-modal-styles.css_ (feel free to use your own style)
-- js from _dist/js-modal.es.js_
+- js from _dist/open-modal.es.js_
 
 HTML:
 ```html
@@ -47,7 +47,7 @@ Include like in the example from /example/index.html
 
 ```html
 <link rel="stylesheet" href="default-modal-styles.css">
-<script src="js-modal.es.js"></script>
+<script src="open-modal.es.js"></script>
 <script> const modal = new Modal('modal', true) </script>
 <button onclick="modal.openModal()">Open modal</button>
 

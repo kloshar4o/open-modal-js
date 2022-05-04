@@ -1,7 +1,25 @@
 {
-  "name": "modal",
-  "private": true,
+  "name": "open-modal-js",
   "version": "0.3.0",
+  "author": {
+    "name": "Alexand Plesca",
+    "email": "kloshar4o@live.com",
+    "url": "https://github.com/kloshar4o"
+  },
+  "repository": "github:kloshar4o/open-modal-js",
+  "license": "MIT",
+  "description": "Vanilla JS modal/popup",
+  "keywords": [
+    "modal",
+    "popup",
+    "vanillajs",
+    "vanilla-js",
+    "typescript"
+  ],
+  "main": "dist/popper.es.js",
+  "browser": "dist/popper.es.js",
+  "module": "dist/popper.es.js",
+  "unpkg": "dist/popper.es.js",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -12,6 +30,10 @@
     "prettier:check": "npx prettier --check .",
     "cy:open": "cypress open"
   },
+  "files": [
+    "dist/*",
+    "src/*"
+  ],
   "devDependencies": {
     "@cypress/vite-dev-server": "2.2.2",
     "@typescript-eslint/eslint-plugin": "5.21.0",
@@ -27,5 +49,8 @@
     "prettier": "2.6.2",
     "typescript": "^4.5.4",
     "vite": "^2.9.5"
+  },
+  "engines": {
+    "node": ">=12"
   }
 }

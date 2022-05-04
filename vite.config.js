@@ -7,7 +7,7 @@ module.exports = defineConfig({
     lib: {
       entry: path.resolve(__dirname, "src/Modal.ts"),
       name: "JsModal",
-      fileName: (format) => `js-modal.${format}.js`,
+      fileName: (format) => `open-modal.${format}.js`,
     },
   },
 });

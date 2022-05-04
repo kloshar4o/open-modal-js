@@ -17,6 +17,10 @@ You should only use these categories when writing your updates:
 - 🤖 TEST: Mock User Login/Logout
 - ‼️ BREAKING: Change authentication protocol
 
+## [0.3.1]
+
+- 👌 IMPROVE: package.json
+
 ## [0.3.0]
 
 - 📦 NEW: Added cypress
