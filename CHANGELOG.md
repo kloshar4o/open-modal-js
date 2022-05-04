@@ -17,6 +17,11 @@ You should only use these categories when writing your updates:
 - 🤖 TEST: Mock User Login/Logout
 - ‼️ BREAKING: Change authentication protocol
 
+## [0.3.0]
+
+- 📦 NEW: Added cypress
+- 📖 DOC: Update the README
+
 ## [0.2.1]
 
 - 📖 DOC: Update the README

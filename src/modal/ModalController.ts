@@ -1,36 +1,4 @@
-export interface ModalConfig {
-  openClass?: string;
-  openOnInit?: boolean;
-  overlayClass?: string;
-  closeButtonClass?: string;
-}
-
-export interface ModalInterface {
-  modalId: string;
-  isOpen: boolean;
-  element: HTMLElement | null;
-  config: ModalConfig;
-  openModal(): void;
-  closeModal(): void;
-}
-
-export interface ModalEvent extends CustomEvent {
-  detail: ModalInterface;
-}
-
-export interface ModalEventMap {
-  "closing:modal": ModalEvent;
-  "closed:modal": ModalEvent;
-  "opening:modal": ModalEvent;
-  "opened:modal": ModalEvent;
-}
-
-export interface ModalCallback {
-  onOpen?: Function;
-  onOpened?: Function;
-  onClosing?: Function;
-  onClosed?: Function;
-}
+import { ModalCallback, ModalConfig, ModalInterface } from "../types";
 
 export default class ModalController implements ModalInterface {
   #state: { isOpen: boolean };
@@ -74,15 +42,28 @@ export default class ModalController implements ModalInterface {
     this.#state.isOpen = false;
 
     const event = { detail: this };
-    document.dispatchEvent(new CustomEvent("closing:modal", event));
-    this.callback.onClosing && this.callback.onClosing(this);
+
+    const closingHandler = () => {
+      modal.removeEventListener("transitionstart", closingHandler);
+      document.dispatchEvent(new CustomEvent("closing:modal", event));
+      this.callback.onClosing && this.callback.onClosing(this);
+    };
 
     const closedHandler = () => {
+      modal.removeEventListener("transitionend", closedHandler);
+      modal.removeEventListener("transitioncancel", closedHandler);
       document.dispatchEvent(new CustomEvent("closed:modal", event));
       this.callback.onClosed && this.callback.onClosed(this);
     };
 
+    modal.addEventListener("transitionstart", closingHandler, { once: true });
+    modal.addEventListener("transitioncancel", closedHandler, { once: true });
     modal.addEventListener("transitionend", closedHandler, { once: true });
+
+    if (getComputedStyle(modal).transitionDuration === "0s") {
+      closingHandler();
+      closedHandler();
+    }
   }
 
   openModal() {
@@ -91,16 +72,28 @@ export default class ModalController implements ModalInterface {
     modal.classList.add(this.config.openClass);
 
     this.#state.isOpen = true;
-    this.callback.onOpen && this.callback.onOpen(this);
 
     const event = { detail: this };
-    document.dispatchEvent(new CustomEvent("opening:modal", event));
+    const openingHandler = () => {
+      modal.removeEventListener("transitionstart", openingHandler);
+      document.dispatchEvent(new CustomEvent("opening:modal", event));
+      this.callback.onOpening && this.callback.onOpening(this);
+    };
 
     const openedHandler = () => {
+      modal.removeEventListener("transitionend", openedHandler);
+      modal.removeEventListener("transitioncancel", openedHandler);
       document.dispatchEvent(new CustomEvent("opened:modal", event));
       this.callback.onOpened && this.callback.onOpened(this);
     };
 
+    modal.addEventListener("transitionstart", openingHandler, { once: true });
+    modal.addEventListener("transitioncancel", openedHandler, { once: true });
     modal.addEventListener("transitionend", openedHandler, { once: true });
+
+    if (getComputedStyle(modal).transitionDuration === "0s") {
+      openedHandler();
+      openingHandler();
+    }
   }
 }
