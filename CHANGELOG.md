@@ -19,6 +19,10 @@ You should only use these categories when writing your updates:
 
 ## [0.1.1]
 
+- 👌 IMPROVE: BodyClick init on dom loaded
+
+## [0.1.1]
+
 - 👌 IMPROVE: Externalize CSS
 
 ## [0.1.0]

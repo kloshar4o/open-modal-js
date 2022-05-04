@@ -34,6 +34,4 @@ class BodyClick {
   }
 }
 
-const bodyClick = new BodyClick();
-document.body.addEventListener("click", bodyClick.eventHandler);
-export default bodyClick;
+export default new BodyClick();
