@@ -20,14 +20,14 @@ Include like in the example from /example/index.html
 ```html
 <link rel="stylesheet" href="default-modal-styles.css">
 <script src="js-modal.es.js"></script>
-<script> const modal = new Modal('modal', true) </script>
+<script> const modal = new ModalController('modal', true) </script>
 <button onclick="modal.openModal()">Open modal</button>
 
 <div id="modal" class="modal">
     <div class="modal-overlay"></div>
     <div class="modal-card">
         <div class="modal-body">
-            <div class="modal-header">Modal</div>
+            <div class="modal-header">ModalController</div>
             <div class="modal-content">Content</div>
             <div class="modal-footer">
                 <button class="modal-close">Close</button>

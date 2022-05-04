@@ -1,37 +1,35 @@
-import { ModalInterface } from "./Modal";
+import { ModalInterface } from "./ModalController";
 
-function closeModalHandler(
-  clickedTarget: HTMLElement,
-  modals: Set<ModalInterface>
-) {
-  let modalToBeClosed = null;
-  for (const modal of modals) {
-    const modalElement = document.getElementById(modal.modalId);
-    if (modalElement && !modalElement.contains(clickedTarget)) continue;
-    const isCloseTarget = clickedTarget.classList.contains("modal-close");
-    const isOverlayTarget = clickedTarget.classList.contains("modal-overlay");
-    if (isCloseTarget || isOverlayTarget) modalToBeClosed = modal;
-  }
-  modalToBeClosed && modalToBeClosed.closeModal();
-}
-
-class BodyClick {
+export default class BodyClick {
   private readonly modals: Set<ModalInterface>;
   public readonly eventHandler: OmitThisParameter<(event: MouseEvent) => void>;
 
   constructor() {
     this.modals = new Set<ModalInterface>();
-    this.eventHandler = this.bodyClicked.bind(this);
+    this.eventHandler = this.#bodyClicked.bind(this);
   }
 
-  bodyClicked(event: MouseEvent) {
+  #bodyClicked(event: MouseEvent) {
     if (!this.modals.size) return;
-    closeModalHandler(event.target as HTMLElement, this.modals);
+    this.#closeModalHandler(event.target as HTMLElement);
+  }
+
+  #closeModalHandler(clickedTarget: HTMLElement) {
+    let modalToBeClosed = null;
+    for (const modal of this.modals) {
+      const modalElement = modal.element;
+      if (modalElement && !modalElement.contains(clickedTarget)) continue;
+
+      const { overlayClass, closeButtonClass } = modal.config;
+      const isCloseTarget = closeButtonClass && clickedTarget.classList.contains(closeButtonClass);
+      const isOverlayTarget = overlayClass && clickedTarget.classList.contains(overlayClass);
+
+      if (isCloseTarget || isOverlayTarget) modalToBeClosed = modal;
+    }
+    modalToBeClosed && modalToBeClosed.closeModal();
   }
 
   addModalToHandler(modal: ModalInterface) {
     this.modals.add(modal);
   }
 }
-
-export default new BodyClick();

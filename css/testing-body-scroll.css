@@ -1,6 +1,9 @@
-body {
+html, body {
     height: 150vh;
     width: 150vw;
+}
+
+body {
     background: repeating-linear-gradient(
             -45deg,
             #222,
@@ -10,7 +13,7 @@ body {
     );
 }
 
-.open-first-modal {
+.open-main-modal {
     margin-top: 75vh;
     margin-left: 50vw;
     transform: translate(-50%, -50%);
