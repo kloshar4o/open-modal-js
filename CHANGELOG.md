@@ -17,6 +17,10 @@ You should only use these categories when writing your updates:
 - 🤖 TEST: Mock User Login/Logout
 - ‼️ BREAKING: Change authentication protocol
 
+## [0.1.1]
+
+- 👌 IMPROVE: Externalize CSS
+
 ## [0.1.0]
 
 - 📦 NEW: CHANGELOG added
