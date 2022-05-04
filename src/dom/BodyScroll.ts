@@ -1,4 +1,4 @@
-import { ModalInterface } from "./ModalController";
+import { ModalInterface } from "../modal/ModalController";
 
 export default class BodyScroll {
   readonly #state: {

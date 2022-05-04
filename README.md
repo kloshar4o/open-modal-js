@@ -2,11 +2,11 @@
 
 ## Description
 
-Vanilla JS modal, that uses single `.open` class to show or hide the modal.
+Vanilla JS modal, that simply adds a `.open` class to show the modal.
 
 ## Quick start
 
--> **Without npm**
+-> **Without package manager**
 
 Download source files
 - css from _public/css/default-modal-styles.css_
@@ -37,4 +37,33 @@ Include like in the example from /example/index.html
 </div>
 ```
 </details>
-    
+
+**Create new modal:**
+```javascript
+new Modal('some-element-id')
+```
+**Open close modal**
+```javascript
+const modal = new Modal('some-element-id')
+
+//Open the modal
+modal.openModal()
+//or
+modal.isOpen = true
+
+//Close modal
+modal.closeModal()
+//or
+modal.isOpen = false
+```
+
+**Listen for events**
+```javascript
+const handler = (event) => {
+    event.detail //<- access the modal object
+}
+document.addEventListener('opening:modal', handler) // .open css class added
+document.addEventListener('opened:modal', handler) // openning css transition end ("transitionend")
+document.addEventListener('closing:modal', handler) // .open css class removed 
+document.addEventListener('closed:modal', handler) // closing css transition end ("transitionend")
+```

@@ -1,6 +1,6 @@
-import ModalController, { ModalCallback, ModalConfig, ModalEvent } from "./ModalController";
-import BodyClick from "./BodyClick";
-import BodyScroll from "./BodyScroll";
+import ModalController, { ModalCallback, ModalConfig, ModalEvent } from "./modal/ModalController";
+import BodyClick from "./dom/BodyClick";
+import BodyScroll from "./dom/BodyScroll";
 
 const bodyClick = new BodyClick();
 const bodyScroll = new BodyScroll();
@@ -31,3 +31,4 @@ class Modal extends ModalController {
 
 // Since this is vanilla JS, we are adding the Modal class globally
 window.Modal = Modal;
+export default Modal;
