@@ -1,4 +1,4 @@
-import { ModalEventMap } from "./modal/ModalController";
+import { ModalEventMap } from "../src/types";
 
 declare global {
   interface Document {

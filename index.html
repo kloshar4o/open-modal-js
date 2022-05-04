@@ -1,98 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
-    <link rel="stylesheet" href="/css/default-modal-styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Vite App</title>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
 </head>
 <body>
 
 <button class="open-main-modal">Open Main ModalController</button>
 
 <div id="prev-modal" class="modal">
-    <div class="modal-overlay"></div>
-    <div class="modal-card">
-        <div class="modal-body">
-            <div class="modal-header">Prev ModalController</div>
-            <div class="modal-content">ModalController in body before the main modal</div>
-            <div class="modal-footer">
-                <button class="modal-close">Close</button>
-            </div>
-        </div>
+  <div class="modal-overlay"></div>
+  <div class="modal-card">
+    <div class="modal-body">
+      <div class="modal-header">Prev ModalController</div>
+      <div class="modal-content">ModalController in body before the main modal</div>
+      <div class="modal-footer">
+        <button class="modal-close">Close</button>
+      </div>
     </div>
+  </div>
 </div>
 
 <div id="main-modal" class="modal">
-    <div class="modal-overlay"></div>
-    <div class="modal-card">
-        <div class="modal-body">
-            <div class="modal-header">Main ModalController</div>
-            <div class="modal-content">
-                <div style="max-width: 500px; max-height: 200px">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi earum illum nostrum nulla perferendis soluta, voluptatem voluptates? Architecto ea earum explicabo harum non, quas quisquam, ratione similique sunt, suscipit veniam.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi earum illum nostrum nulla perferendis soluta, voluptatem voluptates? Architecto ea earum explicabo harum non, quas quisquam, ratione similique sunt, suscipit veniam.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi earum illum nostrum nulla perferendis soluta, voluptatem voluptates? Architecto ea earum explicabo harum non, quas quisquam, ratione similique sunt, suscipit veniam.
-                    </p>
-                </div>
-                <div id="inner-modal" class="modal">
-                    <div class="modal-overlay"></div>
-                    <div class="modal-card">
-                        <div class="modal-body">
-                            <div class="modal-content">Inner ModalController</div>
-                            <div class="modal-footer">
-                                <button class="modal-close">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button class="modal-close">Close</button>
-                <div>
-                    <button class="open-inner-modal">Open Overlay ModalController</button>
-                </div>
-            </div>
+  <div class="modal-overlay"></div>
+  <div class="modal-card">
+    <div class="modal-body">
+      <div class="modal-header">Main ModalController</div>
+      <div class="modal-content">
+        <div style="max-width: 500px; max-height: 200px">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi earum illum nostrum nulla perferendis
+            soluta, voluptatem voluptates? Architecto ea earum explicabo harum non, quas quisquam, ratione similique
+            sunt, suscipit veniam.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi earum illum nostrum nulla perferendis
+            soluta, voluptatem voluptates? Architecto ea earum explicabo harum non, quas quisquam, ratione similique
+            sunt, suscipit veniam.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi earum illum nostrum nulla perferendis
+            soluta, voluptatem voluptates? Architecto ea earum explicabo harum non, quas quisquam, ratione similique
+            sunt, suscipit veniam.
+          </p>
         </div>
+        <div id="inner-modal" class="modal">
+          <div class="modal-overlay"></div>
+          <div class="modal-card">
+            <div class="modal-body">
+              <div class="modal-content">Inner ModalController</div>
+              <div class="modal-footer">
+                <button class="modal-close">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button class="modal-close">Close</button>
+        <div>
+          <button class="open-inner-modal">Open Overlay ModalController</button>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
 <div id="next-modal" class="modal">
-    <div class="modal-overlay"></div>
-    <div class="modal-card">
-        <div class="modal-body">
-            <div class="modal-header">Next ModalController</div>
-            <div class="modal-content">ModalController in body after the main modal</div>
-            <div class="modal-footer">
-                <button class="modal-close">Close</button>
-            </div>
-        </div>
+  <div class="modal-overlay"></div>
+  <div class="modal-card">
+    <div class="modal-body">
+      <div class="modal-header">Next ModalController</div>
+      <div class="modal-content">ModalController in body after the main modal</div>
+      <div class="modal-footer">
+        <button class="modal-close">Close</button>
+      </div>
     </div>
+  </div>
 </div>
 
-<script type="module" src="/src/main.ts"></script>
-<script src="/js/actualViewHeight.js"></script>
-<script type="module" src="/css/testing-body-scroll.css"></script>
 
+<script type="module" src="/assets/css/default-modal-styles.css"></script>
+<script type="module" src="/assets/css/testing-body-scroll.css"></script>
+<script type="module" src="/assets/js/actualViewHeight.js"></script>
+<script type="module" src="/src/Modal.ts"></script>
 <script>
-    const interval = setInterval(() => {
-        if (!Modal) return
-        if(Modal) clearInterval(interval)
-        const mainModal = new Modal('main-modal')
-        const innerModal = new Modal('inner-modal')
-        const prevModal = new Modal('prev-modal')
-        const nextModal = new Modal('next-modal')
-        document.querySelector('.open-main-modal').addEventListener('click', () => mainModal.isOpen = true)
-        document.querySelector('.open-inner-modal').addEventListener('click', () => innerModal.isOpen = true)
-        document.addEventListener("closed:any", (modal) => console.log(modal))
-    }, 100)
+  const interval = setInterval(() => {
+    if (!Modal) return;
+    if (Modal) clearInterval(interval);
+    const mainModal = new Modal("main-modal");
+    const innerModal = new Modal("inner-modal");
+    const prevModal = new Modal("prev-modal");
+    const nextModal = new Modal("next-modal");
+    document.querySelector(".open-main-modal").addEventListener("click", () => mainModal.isOpen = true);
+    document.querySelector(".open-inner-modal").addEventListener("click", () => innerModal.isOpen = true);
+    document.addEventListener("closed:any", (modal) => console.log(modal));
+  }, 100);
 </script>
 
 </body>
