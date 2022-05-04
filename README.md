@@ -6,8 +6,6 @@ Vanilla JS modal, that simply adds a `.open` class to show the modal.
 
 ## Quick start
 
--> **Without package manager**
-
 Download source files
 - css from _assets/css/default-modal-styles.css_ (feel free to use your own style)
 - js from _dist/open-modal.es.js_
@@ -40,7 +38,7 @@ new Modal('some-element-id')
 <details>
 
 <summary> 
-Default template 
+Template 
 </summary>
 
 Include like in the example from /example/index.html
@@ -68,7 +66,7 @@ Include like in the example from /example/index.html
 
 <details>
 <summary>
-new Modal()
+Arguments
 </summary>
 
 ```javascript
@@ -122,7 +120,7 @@ new Modal(
 
 <details>
 <summary>
-Open close modal
+Open/Close
 </summary>
 
 ```javascript
@@ -172,12 +170,12 @@ Clone/download repo and install dependencies
 npm i
 ```
 
--> **Hot reload:**
+### **Hot reload:**
 ```npm
 npm run dev
 ```
 
--> **Cypress:**
+### **Cypress:**
 ```npm
 npm run cy:open
 ```
