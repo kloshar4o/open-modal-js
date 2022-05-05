@@ -17,6 +17,11 @@ You should only use these categories when writing your updates:
 - 🤖 TEST: Mock User Login/Logout
 - ‼️ BREAKING: Change authentication protocol
 
+## [0.4.0]
+
+- 📦 NEW: Type definition generation
+- 🐛 FIX: Null modal click check
+
 ## [0.3.2]
 
 - 📖 DOC: Update the README
@@ -37,7 +42,7 @@ You should only use these categories when writing your updates:
 
 ## [0.2.0]
 
-- 📦 NEW: Added config and callbacks to Modal
+- 📦 NEW: Added config and callbacks to OpenModalJs
 - 📦 NEW: Added body lock when modal is opened
 - 📦 NEW: Added custom events on modal open/close
 

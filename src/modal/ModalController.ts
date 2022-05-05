@@ -1,4 +1,4 @@
-import { ModalCallback, ModalConfig, ModalInterface } from "../types";
+import { ModalCallback, ModalConfig, ModalInterface } from "../interfaces";
 
 export default class ModalController implements ModalInterface {
   #state: { isOpen: boolean };

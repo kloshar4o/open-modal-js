@@ -86,15 +86,15 @@
 <script type="module" src="/assets/css/default-modal-styles.css"></script>
 <script type="module" src="/assets/css/testing-body-scroll.css"></script>
 <script type="module" src="/assets/js/actualViewHeight.js"></script>
-<script type="module" src="/src/Modal.ts"></script>
+<script type="module" src="/src/main.ts"></script>
 <script>
   const interval = setInterval(() => {
-    if (!Modal) return;
-    if (Modal) clearInterval(interval);
-    const mainModal = new Modal("main-modal");
-    const innerModal = new Modal("inner-modal");
-    const prevModal = new Modal("prev-modal");
-    const nextModal = new Modal("next-modal");
+    if (!OpenModalJs) return;
+    if (OpenModalJs) clearInterval(interval);
+    const mainModal = new OpenModalJs("main-modal");
+    const innerModal = new OpenModalJs("inner-modal");
+    const prevModal = new OpenModalJs("prev-modal");
+    const nextModal = new OpenModalJs("next-modal");
     document.querySelector(".open-main-modal").addEventListener("click", () => mainModal.isOpen = true);
     document.querySelector(".open-inner-modal").addEventListener("click", () => innerModal.isOpen = true);
     document.addEventListener("closed:any", (modal) => console.log(modal));

@@ -14,6 +14,13 @@ export interface ModalInterface {
   closeModal(): void;
 }
 
+export interface ModalCallback {
+  onOpening?: Function;
+  onOpened?: Function;
+  onClosing?: Function;
+  onClosed?: Function;
+}
+
 export interface ModalEvent extends CustomEvent {
   detail: ModalInterface;
 }
@@ -23,11 +30,4 @@ export interface ModalEventMap {
   "closed:modal": ModalEvent;
   "opening:modal": ModalEvent;
   "opened:modal": ModalEvent;
-}
-
-export interface ModalCallback {
-  onOpening?: Function;
-  onOpened?: Function;
-  onClosing?: Function;
-  onClosed?: Function;
 }

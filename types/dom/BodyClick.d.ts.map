@@ -1,0 +1,1 @@
+{"version":3,"file":"BodyClick.d.ts","sourceRoot":"","sources":["../../src/dom/BodyClick.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,cAAc,EAAE,MAAM,eAAe,CAAC;AAE/C,MAAM,CAAC,OAAO,OAAO,SAAS;;IAC5B,OAAO,CAAC,QAAQ,CAAC,MAAM,CAAsB;IAC7C,SAAgB,YAAY,EAAE,iBAAiB,CAAC,CAAC,KAAK,EAAE,UAAU,KAAK,IAAI,CAAC,CAAC;;IA2B7E,iBAAiB,CAAC,KAAK,EAAE,cAAc;CAGxC"}

@@ -1,4 +1,4 @@
-import { ModalInterface } from "../types";
+import { ModalInterface } from "../interfaces";
 
 export default class BodyClick {
   private readonly modals: Set<ModalInterface>;
@@ -18,7 +18,7 @@ export default class BodyClick {
     let modalToBeClosed = null;
     for (const modal of this.modals) {
       const modalElement = modal.element;
-      if (modalElement && !modalElement.contains(clickedTarget)) continue;
+      if (!modalElement || !modalElement.contains(clickedTarget)) continue;
 
       const { overlayClass, closeButtonClass } = modal.config;
       const isCloseTarget = closeButtonClass && clickedTarget.classList.contains(closeButtonClass);

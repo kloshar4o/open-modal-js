@@ -8,29 +8,26 @@ Vanilla JS modal, that simply adds a `.open` class to show the modal.
 
 Download source files
 - css from _assets/css/default-modal-styles.css_ (feel free to use your own style)
-- js from _dist/open-modal.es.js_
+- js from _dist/open-modal-js.umd.js_
 
 HTML:
 ```html
 
-<div id="some-element-id" class="modal open">
-    <div class="modal-overlay"></div>
-    <div class="modal-card">
-      
-        <div class="modal-body">
-          Modal Content
-        </div>
-      
-        <div class="modal-footer">
-          <button class="modal-close">Close</button>
-        </div>
-      
+<div id="modal" class="modal">
+  <div class="modal-overlay"></div>
+  <div class="modal-card">
+    <div class="modal-body">
+      <div class="modal-content">Content</div>
+      <div class="modal-footer">
+        <button class="modal-close">Close</button>
+      </div>
     </div>
+  </div>
 </div>
 ```
 JavaScript:
 ```javascript
-new Modal('some-element-id')
+new OpenModalJs('modal')
 ```
 
 ## Details
@@ -45,8 +42,8 @@ Include like in the example from /example/index.html
 
 ```html
 <link rel="stylesheet" href="default-modal-styles.css">
-<script src="open-modal.es.js"></script>
-<script> const modal = new Modal('modal', true) </script>
+<script src="open-modal-js.umd.js"></script>
+<script> const modal = new OpenModalJs('modal', true) </script>
 <button onclick="modal.openModal()">Open modal</button>
 
 <div id="modal" class="modal">
@@ -70,12 +67,12 @@ Arguments
 </summary>
 
 ```javascript
-new Modal(modalId, config, callback)
+new OpenModalJs(modalId, config, callback)
 ```
 
 
 ###`modalId` HTML id Attribute (required)
-### `config` Modal configurations
+### `config` OpenModalJs configurations
 
 | Property           | Type      | Default           | Description                                                                                                                                       |
 |--------------------|-----------|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -98,7 +95,7 @@ if the modal doesn't have css `transition-duration`both events will fire
 
 All props example:
 ```javascript
-new Modal(
+new OpenModalJs(
   'some-id', 
   {
     openOnInit: false,
@@ -124,7 +121,7 @@ Open/Close
 </summary>
 
 ```javascript
-const modal = new Modal('some-element-id')
+const modal = new OpenModalJs('some-element-id')
 
 //Open the modal
 modal.openModal()

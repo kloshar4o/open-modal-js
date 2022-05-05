@@ -1,6 +1,6 @@
 {
   "name": "open-modal-js",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "author": {
     "name": "Alexand Plesca",
     "email": "kloshar4o@live.com",
@@ -14,12 +14,21 @@
     "popup",
     "vanillajs",
     "vanilla-js",
-    "typescript"
+    "typescript",
+    "vite",
+    "prettier",
+    "eslint",
+    "cypress"
   ],
-  "main": "dist/popper.es.js",
-  "browser": "dist/popper.es.js",
-  "module": "dist/popper.es.js",
-  "unpkg": "dist/popper.es.js",
+  "module": "./dist/open-modal-js.es.js",
+  "main": "./dist/open-modal-js.umd.js",
+  "types": "./types/main.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "types",
+    "assets"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -30,10 +39,6 @@
     "prettier:check": "npx prettier --check .",
     "cy:open": "cypress open"
   },
-  "files": [
-    "dist/*",
-    "src/*"
-  ],
   "devDependencies": {
     "@cypress/vite-dev-server": "2.2.2",
     "@typescript-eslint/eslint-plugin": "5.21.0",
@@ -52,5 +57,6 @@
   },
   "engines": {
     "node": ">=12"
-  }
+  },
+  "pre-commit": [ "eslint", "prettier:check", "build" ]
 }
