@@ -1,6 +1,6 @@
 {
   "name": "open-modal-js",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "author": {
     "name": "Alexand Plesca",
     "email": "kloshar4o@live.com",
@@ -51,6 +51,7 @@
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-n": "15.2.0",
     "eslint-plugin-promise": "6.0.0",
+    "pre-commit": "1.2.2",
     "prettier": "2.6.2",
     "typescript": "^4.5.4",
     "vite": "^2.9.5"
@@ -58,5 +59,8 @@
   "engines": {
     "node": ">=12"
   },
-  "pre-commit": [ "eslint", "prettier:check", "build" ]
+  "pre-commit": [
+    "eslint",
+    "prettier:check"
+  ]
 }

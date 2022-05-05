@@ -17,6 +17,10 @@ You should only use these categories when writing your updates:
 - 🤖 TEST: Mock User Login/Logout
 - ‼️ BREAKING: Change authentication protocol
 
+## [0.4.1]
+
+- 👌 IMPROVE: Added pre-commit
+
 ## [0.4.0]
 
 - 📦 NEW: Type definition generation

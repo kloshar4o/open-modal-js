@@ -135,7 +135,7 @@ closeModalHandler_fn = function(clickedTarget) {
   let modalToBeClosed = null;
   for (const modal of this.modals) {
     const modalElement = modal.element;
-    if (modalElement && !modalElement.contains(clickedTarget))
+    if (!modalElement || !modalElement.contains(clickedTarget))
       continue;
     const { overlayClass, closeButtonClass } = modal.config;
     const isCloseTarget = closeButtonClass && clickedTarget.classList.contains(closeButtonClass);

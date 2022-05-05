@@ -1,56 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vite App</title>
-  <link rel="stylesheet" href="../assets/css/default-modal-styles.css">
-  <link rel="stylesheet" href="../assets/css/testing-body-scroll.css">
-  <script src="../assets/js/actualViewHeight.js"></script>
-  <script src="../dist/open-modal-js.es.js"></script>
-</head>
-<body>
-
-<div id="super-modal" class="modal">
-  <div class="modal-overlay"></div>
-  <div class="modal-card">
-    <div class="modal-body">
-      <div class="modal-header">Main ModalController</div>
-      <div class="modal-content">
-        <div style="max-width: 500px; max-height: 200px">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi earum illum nostrum nulla perferendis soluta, voluptatem voluptates? Architecto ea earum explicabo harum non, quas quisquam, ratione similique sunt, suscipit veniam.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi earum illum nostrum nulla perferendis soluta, voluptatem voluptates? Architecto ea earum explicabo harum non, quas quisquam, ratione similique sunt, suscipit veniam.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi earum illum nostrum nulla perferendis soluta, voluptatem voluptates? Architecto ea earum explicabo harum non, quas quisquam, ratione similique sunt, suscipit veniam.
-          </p>
-        </div>
-        <div id="inner-modal" class="modal">
-          <div class="modal-overlay"></div>
-          <div class="modal-card">
-            <div class="modal-body">
-              <div class="modal-content">Inner ModalController</div>
-              <div class="modal-footer">
-                <button class="modal-close">Close</button>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link rel="stylesheet" href="../assets/css/default-modal-styles.css" />
+    <link rel="stylesheet" href="../assets/css/testing-body-scroll.css" />
+    <script src="../assets/js/actualViewHeight.js"></script>
+    <script src="../dist/open-modal-js.es.js"></script>
+  </head>
+  <body>
+    <div id="super-modal" class="modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-card">
+        <div class="modal-body">
+          <div class="modal-header">Main ModalController</div>
+          <div class="modal-content">
+            <div style="max-width: 500px; max-height: 200px">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi earum illum
+                nostrum nulla perferendis soluta, voluptatem voluptates? Architecto ea earum
+                explicabo harum non, quas quisquam, ratione similique sunt, suscipit veniam.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi earum illum
+                nostrum nulla perferendis soluta, voluptatem voluptates? Architecto ea earum
+                explicabo harum non, quas quisquam, ratione similique sunt, suscipit veniam.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi earum illum
+                nostrum nulla perferendis soluta, voluptatem voluptates? Architecto ea earum
+                explicabo harum non, quas quisquam, ratione similique sunt, suscipit veniam.
+              </p>
+            </div>
+            <div id="inner-modal" class="modal">
+              <div class="modal-overlay"></div>
+              <div class="modal-card">
+                <div class="modal-body">
+                  <div class="modal-content">Inner ModalController</div>
+                  <div class="modal-footer">
+                    <button class="modal-close">Close</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-      </div>
-      <div class="modal-footer">
-        <button class="modal-close">Close</button>
-        <div>
-          <button class="open-inner-modal">Open Overlay ModalController</button>
+          <div class="modal-footer">
+            <button class="modal-close">Close</button>
+            <div>
+              <button class="open-inner-modal">Open Overlay ModalController</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-</body>
+  </body>
 </html>
