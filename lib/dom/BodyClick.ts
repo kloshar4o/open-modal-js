@@ -11,10 +11,11 @@ export default class BodyClick {
 
   #bodyClicked(event: MouseEvent) {
     if (!this.modals.size) return;
-    this.#closeModalHandler(event.target as HTMLElement);
+    this.#closeModalHandler(event);
   }
 
-  #closeModalHandler(clickedTarget: HTMLElement) {
+  #closeModalHandler(event: MouseEvent) {
+    const clickedTarget = event.target as HTMLElement;
     let modalToBeClosed = null;
     for (const modal of this.modals) {
       const modalElement = modal.element;
@@ -26,7 +27,10 @@ export default class BodyClick {
 
       if (isCloseTarget || isOverlayTarget) modalToBeClosed = modal;
     }
-    modalToBeClosed && modalToBeClosed.closeModal();
+    if (modalToBeClosed) {
+      modalToBeClosed.closeModal();
+      event.preventDefault();
+    }
   }
 
   addModalToHandler(modal: ModalInterface) {

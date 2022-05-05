@@ -19,5 +19,5 @@
     "declarationMap": true,
     "emitDeclarationOnly": true
   },
-  "include": ["./src/**/*.ts"]
+  "include": ["./lib/**/*.ts"]
 }

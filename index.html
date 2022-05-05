@@ -1,105 +1,89 @@
-<!DOCTYPE html>
+<!--
+
+Disclaimer:
+None of css classes or semantic structure bellow are required for the modal to work,
+you can use your own classes, styles and semantics.
+
+Although if you want to keep all accessibility features,
+it is recommended to keep the semantics and attributes, except the class attributes
+
+Accessibility attributes info https://www.w3.org/TR/wai-aria-practices-1.1/examples/dialog-modal/dialog.html
+
+--><!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>OpenModalJS</title>
+
+    <!--(Not required) Default modal styles-->
+    <link rel="stylesheet" href="/assets/css/default-modal-styles.css" />
+
+    <!--(Not required) For scroll lock testing, the body should be locked when modal is opened-->
+    <link rel="stylesheet" href="/assets/css/testing-body-scroll.css" />
   </head>
   <body>
-    <button class="open-main-modal">Open Main ModalController</button>
-
-    <div id="prev-modal" class="modal">
-      <div class="modal-overlay"></div>
-      <div class="modal-card">
-        <div class="modal-body">
-          <div class="modal-header">Prev ModalController</div>
-          <div class="modal-content">ModalController in body before the main modal</div>
-          <div class="modal-footer">
-            <button class="modal-close">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <button class="open-main-modal">Open Main Modal</button>
 
     <div id="main-modal" class="modal">
+      <!--Modal should close on .modal-overlay click-->
       <div class="modal-overlay"></div>
-      <div class="modal-card">
+
+      <!--Prevents from focusing outside the modal via TAB press-->
+      <div tabindex="0"></div>
+
+      <!--Must have wrapper, for the content scroll to work properly-->
+      <div
+        class="modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="main-modal-label"
+        aria-describedby="main-modal-description"
+      >
+        <!--Adds background, wraps elements, keeps max. height/width to fit the screen-->
         <div class="modal-body">
-          <div class="modal-header">Main ModalController</div>
-          <div class="modal-content">
-            <div style="max-width: 500px; max-height: 200px">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi earum illum
-                nostrum nulla perferendis soluta, voluptatem voluptates? Architecto ea earum
-                explicabo harum non, quas quisquam, ratione similique sunt, suscipit veniam.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi earum illum
-                nostrum nulla perferendis soluta, voluptatem voluptates? Architecto ea earum
-                explicabo harum non, quas quisquam, ratione similique sunt, suscipit veniam.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi earum illum
-                nostrum nulla perferendis soluta, voluptatem voluptates? Architecto ea earum
-                explicabo harum non, quas quisquam, ratione similique sunt, suscipit veniam.
-              </p>
-            </div>
-            <div id="inner-modal" class="modal">
-              <div class="modal-overlay"></div>
-              <div class="modal-card">
-                <div class="modal-body">
-                  <div class="modal-content">Inner ModalController</div>
-                  <div class="modal-footer">
-                    <button class="modal-close">Close</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <!--.modal-close elements close the modal-->
+          <a href="#" role="button" aria-label="Close modal" class="modal-close x-icon"></a>
+
+          <!-- .modal-header Keeps the content sticky on top-->
+          <div id="main-modal-label" class="modal-header">
+            <h3>Modal Title</h3>
           </div>
+
+          <!-- .modal-content Scrollable content-->
+          <div id="main-modal-description" class="modal-content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores assumenda,
+              blanditiis expedita facere, facilis neque nesciunt officiis optio perspiciatis
+              quibusdam quidem sed. Dignissimos dolorum inventore magnam repellat sed, velit
+              voluptatum.
+            </p>
+          </div>
+
+          <!-- .modal-footer Keeps the content sticky on bottom-->
           <div class="modal-footer">
-            <button class="modal-close">Close</button>
+            <!--.modal-close elements close the modal-->
             <div>
-              <button class="open-inner-modal">Open Overlay ModalController</button>
+              <button class="modal-close">Close Modal</button>
             </div>
+
+            <b>Modal Footer</b>
           </div>
         </div>
       </div>
+
+      <!--Prevents from focusing outside the modal via TAB press-->
+      <div tabindex="0"></div>
     </div>
 
-    <div id="next-modal" class="modal">
-      <div class="modal-overlay"></div>
-      <div class="modal-card">
-        <div class="modal-body">
-          <div class="modal-header">Next ModalController</div>
-          <div class="modal-content">ModalController in body after the main modal</div>
-          <div class="modal-footer">
-            <button class="modal-close">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!--(Not required) Creates --screen-h css variable, which fixes safari view height issue-->
+    <script src="/assets/js/actualViewHeight.js"></script>
 
-    <script type="module" src="/assets/css/default-modal-styles.css"></script>
-    <script type="module" src="/assets/css/testing-body-scroll.css"></script>
-    <script type="module" src="/assets/js/actualViewHeight.js"></script>
-    <script type="module" src="/src/main.ts"></script>
+    <!--Loads the Modal script-->
+    <script src="/dist/open-modal-js.umd.js"></script>
+
     <script>
-      const interval = setInterval(() => {
-        if (!OpenModalJs) return;
-        if (OpenModalJs) clearInterval(interval);
-        const mainModal = new OpenModalJs("main-modal");
-        const innerModal = new OpenModalJs("inner-modal");
-        const prevModal = new OpenModalJs("prev-modal");
-        const nextModal = new OpenModalJs("next-modal");
-        document
-          .querySelector(".open-main-modal")
-          .addEventListener("click", () => (mainModal.isOpen = true));
-        document
-          .querySelector(".open-inner-modal")
-          .addEventListener("click", () => (innerModal.isOpen = true));
-        document.addEventListener("closed:any", (modal) => console.log(modal));
-      }, 100);
+      const mainModal = new OpenModalJs("main-modal");
+      const openButton = document.querySelector(".open-main-modal");
+      openButton.addEventListener("click", mainModal.openModal.bind(mainModal));
     </script>
   </body>
 </html>

@@ -1,6 +1,0 @@
-{
-  "compilerOptions": {
-    "isolatedModules": false
-  },
-  "include": ["**/*.ts"]
-}

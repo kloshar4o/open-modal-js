@@ -128,10 +128,11 @@ _bodyClicked = new WeakSet();
 bodyClicked_fn = function(event) {
   if (!this.modals.size)
     return;
-  __privateMethod(this, _closeModalHandler, closeModalHandler_fn).call(this, event.target);
+  __privateMethod(this, _closeModalHandler, closeModalHandler_fn).call(this, event);
 };
 _closeModalHandler = new WeakSet();
-closeModalHandler_fn = function(clickedTarget) {
+closeModalHandler_fn = function(event) {
+  const clickedTarget = event.target;
   let modalToBeClosed = null;
   for (const modal of this.modals) {
     const modalElement = modal.element;
@@ -143,7 +144,10 @@ closeModalHandler_fn = function(clickedTarget) {
     if (isCloseTarget || isOverlayTarget)
       modalToBeClosed = modal;
   }
-  modalToBeClosed && modalToBeClosed.closeModal();
+  if (modalToBeClosed) {
+    modalToBeClosed.closeModal();
+    event.preventDefault();
+  }
 };
 class BodyScroll {
   constructor() {

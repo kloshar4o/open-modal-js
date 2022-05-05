@@ -12,6 +12,7 @@ module.exports = {
   },
   plugins: ["@typescript-eslint", "cypress"],
   rules: {
+    "no-new": "off",
     "no-unused-vars": "warn",
     "cypress/no-assigning-return-values": "error",
     "cypress/no-unnecessary-waiting": "error",

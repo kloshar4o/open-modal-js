@@ -17,6 +17,12 @@ You should only use these categories when writing your updates:
 - 🤖 TEST: Mock User Login/Logout
 - ‼️ BREAKING: Change authentication protocol
 
+## [0.5.0]
+
+- 👌 IMPROVE: Cypress for proper TDD
+- 👌 IMPROVE: Modal styles and accessibility
+- 👌 IMPROVE: File structure 
+
 ## [0.4.1]
 
 - 👌 IMPROVE: Added pre-commit

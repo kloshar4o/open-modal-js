@@ -5,7 +5,7 @@ module.exports = defineConfig({
   root: "./",
   build: {
     lib: {
-      entry: path.resolve(__dirname, "src/main.ts"),
+      entry: path.resolve(__dirname, "lib/main.ts"),
       name: "OpenModalJs",
       fileName: (format) => `open-modal-js.${format}.js`,
     },

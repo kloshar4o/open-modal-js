@@ -1,6 +1,16 @@
 {
   "name": "open-modal-js",
-  "version": "0.4.1",
+  "version": "0.5.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:watch": "tsc && vite build --watch",
+    "preview": "vite preview",
+    "eslint": "npx eslint .",
+    "prettier:write": "npx prettier --write .",
+    "prettier:check": "npx prettier --check .",
+    "cy:open": "cypress open"
+  },
   "author": {
     "name": "Alexand Plesca",
     "email": "kloshar4o@live.com",
@@ -23,27 +33,23 @@
   "module": "./dist/open-modal-js.es.js",
   "main": "./dist/open-modal-js.umd.js",
   "types": "./types/main.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/my-lib.es.js",
+      "require": "./dist/my-lib.umd.js"
+    }
+  },
   "files": [
     "dist",
-    "src",
+    "lib",
     "types",
     "assets"
   ],
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "build:watch": "tsc && vite build --watch",
-    "preview": "vite preview",
-    "eslint": "npx eslint .",
-    "prettier:write": "npx prettier --write .",
-    "prettier:check": "npx prettier --check .",
-    "cy:open": "cypress open"
-  },
   "devDependencies": {
-    "@cypress/vite-dev-server": "2.2.2",
     "@typescript-eslint/eslint-plugin": "5.21.0",
     "@typescript-eslint/parser": "5.21.0",
     "cypress": "9.6.0",
+    "cypress-watch-and-reload": "1.7.5",
     "eslint": "8.14.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-config-standard": "17.0.0",
