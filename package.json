@@ -1,6 +1,6 @@
 {
   "name": "open-modal-js",
-  "version": "0.6.1",
+  "version": "0.6.3",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
