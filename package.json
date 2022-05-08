@@ -10,7 +10,8 @@
     "prettier:write": "npx prettier --write .",
     "prettier:check": "npx prettier --check .",
     "cy:open": "cypress open",
-    "cy:test": "cypress run"
+    "cy:test": "cypress run",
+    "test": "npm run cy:test -- --config video=false"
   },
   "author": {
     "name": "Alexand Plesca",
@@ -68,6 +69,8 @@
   },
   "pre-commit": [
     "eslint",
-    "prettier:check"
+    "prettier:check",
+    "eslint",
+    "test"
   ]
 }
