@@ -69,8 +69,6 @@
   },
   "pre-commit": [
     "eslint",
-    "prettier:check",
-    "eslint",
-    "test"
+    "prettier:check"
   ]
 }
