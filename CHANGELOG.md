@@ -17,8 +17,16 @@ You should only use these categories when writing your updates:
 - 🤖 TEST: Mock User Login/Logout
 - ‼️ BREAKING: Change authentication protocol
 
+## [0.6.3]
+
+- 👌 IMPROVE: adding CI
+
+## [0.6.2]
+
+- 👌 IMPROVE: package scripts
+
 ## [0.6.1]
-- 
+
 - 📖 DOC: Update the README
 
 ## [0.6.0]
