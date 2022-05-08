@@ -81,6 +81,7 @@ Accessibility attributes info https://www.w3.org/TR/wai-aria-practices-1.1/examp
     <script src="/dist/open-modal-js.umd.js"></script>
 
     <script>
+      const OpenModalJs = window.OpenModalJs;
       const mainModal = new OpenModalJs("main-modal");
       const openButton = document.querySelector(".open-main-modal");
       openButton.addEventListener("click", mainModal.openModal.bind(mainModal));

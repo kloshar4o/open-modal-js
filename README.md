@@ -171,15 +171,21 @@ npm i
 ```npm
 npm run dev
 ```
+Since we are using the build inside index.html,  
+we need to run `build:watch` as well
+```npm
+npm run build:watch
+```
+Thats because we want the index.html, be usable with cypress test driven development
 
 ### **Cypress:**
 ```npm
 npm run cy:open
 ```
-Cypress uses the dist folder,
-you can reload build on change via:
+Cypress uses the build folder, use `build:watch` to rebuild the lib on every change
 ```npm
 npm run build:watch
 ```
+Cypress will reload on every rebuild, thanks to `cypress-watch-and-reload`
 
 

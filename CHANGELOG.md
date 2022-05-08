@@ -17,6 +17,11 @@ You should only use these categories when writing your updates:
 - 🤖 TEST: Mock User Login/Logout
 - ‼️ BREAKING: Change authentication protocol
 
+## [0.6.0]
+
+- 📦 NEW: Added multiple modals tests
+- 👌 IMPROVE: Cypress TypeScript
+
 ## [0.5.0]
 
 - 👌 IMPROVE: Cypress for proper TDD
